@@ -24,11 +24,14 @@ function SignUp() {
       return;
     }
 
-    const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password }),
-    });
+    const response = await fetch(
+      `https://inotebook-backend-production-f63d.up.railway.app/api/auth/createuser`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      }
+    );
 
     const json = await response.json();
     console.log(json);
